@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>update</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo">Go Idento.</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/images.png" class="image" alt="">
+         <h3 class="name">Student Name</h3>
+         <p class="role">student</p>
+         <a href="profile.html" class="btn">view profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../static/images/images.png" class="image" alt="">
+      <h3 class="name">Student Name</h3>
+      <p class="role">student</p>
+      <a href="{{url_for('profile')}}" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="{{url_for('home')}}"><i class="fas fa-home"></i><span>Estimate</span></a>
+      <a href="{{url_for('about')}}"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="{{url_for('form')}}"><i class="fas fa-graduation-cap"></i><span>Identify</span></a>
+      <a href="{{url_for('teachers')}}"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="{{url_for('contactus')}}"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+
+
+</div>
+
+<section class="form-container">
+
+   <form action="{{url_for('update')}}" method="post" enctype="multipart/form-data">
+      <h3>update profile</h3>
+      <br>
+      <p>Please Enter Student ID</p>
+      <input type="text" id="id" name="id" class="box">
+      <p>Attendance</p>
+      <select name="att" id="att">
+      <option value="1">Always</option>
+         <option value="2">Sometimes</option>
+         <option value="3">Never</option>
+      </select>
+      <p>Reading frequency (non-scientific books/journals)</p>
+      <select name="rns" id="rns">
+         <option value="1">None</option>
+         <option value="2">Sometimes</option>
+         <option value="3">Often</option>
+       </select>
+      <p>CGPA in last SEM</p>
+      <select name="gpa" id="gpa">
+      <option value="1">less than 2.00</option>
+         <option value="2">2.00-2.49</option>
+         <option value="3">2.50-2.99</option>
+         <option value="4">3.00-3.49</option>
+         <option value="5">Above 3.49</option>
+      </select>
+      <p>Part Time Job</p>
+      <select name="work" id="work">
+         <option value="1">Yes</option>
+         <option value="2">No</option>
+       </select>
+       <br>
+       <input type="submit" value="submit" class="inline-btn">
+   </form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+   
+</body>
+</html>
